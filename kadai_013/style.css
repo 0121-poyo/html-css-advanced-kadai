@@ -1,0 +1,158 @@
+/* PC、スマホ共通スタイル */
+body {
+    font-family: "Source Sans Pro", "Hiragino Kaku Gothic ProN", Meiryo, Arial,
+        sans-serif;
+}
+
+p {
+    font-size: 15px;
+}
+
+#main-visual > img {
+    width: 100%;
+}
+
+/*================
+PC用のスタイル 
+=================*/
+@media screen and (min-width: 768px) {
+    /* 横幅設定 */
+    body {
+        max-width: 1080px;
+        min-width: 960px;
+        margin: 0 auto 0 auto;
+    }
+
+    /* スマホ用ナビゲーション非表示 */
+    #menu-sp {
+        display: none;
+    }
+    #nav-sp {
+        display: none;
+    }
+
+    /* ヘッダー */
+    header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /* ナビゲーションのレイアウト */
+    #nav-pc {
+        text-align: right;
+        font-size: 14px;
+        padding-top: 15px;
+    }
+
+    /* ナビゲーションのリンクの装飾設定 */
+    #nav-pc > a {
+        text-decoration: none;
+        margin-left: 20px;
+    }
+
+    #nav-pc > a:link {
+        color: #0d0d0d;
+    }
+
+    #nav-pc > a:visited {
+        color: #0d0d0d;
+    }
+
+    #nav-pc > a:hover {
+        color: #0d0d0d;
+        text-decoration: underline;
+    }
+
+    #nav-pc > a:active {
+        color: #0d0d0d;
+    }
+}
+
+/*====================
+スマートフォン用のスタイル
+=====================*/
+/* 画面幅が767px（iPadの画面幅）以下のとき、スマホ用のスタイルを指定する */
+@media screen and (max-width: 767px) {
+    /* ページ全体 */
+    body {
+        min-width: 375px;
+        margin: 0;
+    }
+
+    /* PC用ナビゲーション非表示 */
+    #nav-pc {
+        display: none;
+    }
+
+    /* ハンバーガーメニュー */
+    #menu-sp {
+        float: right;
+        padding: 0;
+    }
+
+    /* スマホ用ナビゲーションの表示切替 */
+    #nav-sp {
+        background-color: #ce933e;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        /* 初期状態は非表示 */
+        /* ハンバーガーメニューをクリックしたときのJavaScriptで
+        display: blockになると表示される */
+        display: none;
+        z-index: 100;
+    }
+
+    /* ×ボタン */
+    #close {
+        /* 配置（position）：絶対位置（absolute）を指定し、
+        親要素（#nav_sp）の右上の角を基準位置 */
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    /* ナビゲーションメニュー用ロゴ */
+    /* SocialTechのロゴ、押すとトップページへ */
+    #logo-sp {
+        margin: 80px 0 30px 20px;
+    }
+    /* ナビの文字リンクの装飾 */
+    /* 表示方法（display）：blockを指定し、縦並びにする */
+    #nav-sp > a {
+        display: block;
+    }
+    /* 未訪問 */
+    #nav-sp > a:link {
+        color: #ffffff;
+    }
+    #nav-sp > a:visited {
+        color: #ffffff;
+    }
+    #nav-sp > a:hover {
+        color: #ffffff;
+        text-decoration: underline;
+    }
+    #nav-sp > a:active {
+        color: #ffffff;
+    }
+
+    /* class：menuに反映 */
+    #nav-sp > .menu {
+        /* 文字装飾（text-decoration）：なし（none） */
+        text-decoration: none;
+        display: block;
+        margin: 0 20px 0 20px;
+        height: 44px;
+        font-size: 16px;
+        /* 背景画像（background-image）：url("images/arrow.png")を指定し、
+    arrow.pngをリンクの背景として表示 */
+        background-image: url("images/arrow.png");
+        /* ＞の画像の背景のリピート方法（background-repeat）：繰り返さない（no-repeat） */
+        background-repeat: no-repeat;
+        /* ＞の画像の背景の位置（background-position）：right topを指定し、右上に配置する */
+        background-position: right top;
+    }
+}
